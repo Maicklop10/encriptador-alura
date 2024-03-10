@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador RP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">   
+
+</head>
+
+<body class="contenedor-body">
+    <div class="contenedor-principal">
+        <div class="contenedor-encriptar">            
+        <header>
+            <img src="imagenes/Logo.svg"  alt="Logo Alura">
+        </header>
+    <main class="contenedor-main">
+        <section class="contenedor-texto">
+            <div class="caja-texto-ingreso">     
+                <textarea class="caja-texto font-inter" id="texto" name="texto" oninput="convertirTexto()" placeholder="Ingrese el texto aquí"></textarea>
+            </div>
+            
+            <div class="bloque-1">
+                <div class="mensaje-informativo">
+                        <img class="alerta" src="imagenes/alerta.svg" alt="alerta" style="width: 15px;">
+                        <p class="mensaje-alerta font-inter">Solo se permite texto en mayúsculas y sin acentos</p>
+                </div>
+                
+                <div class="botones">
+                        <button class="boton-encriptar boton" id="encriptar" onclick="encriptar()">Encriptar</button>
+                        <button class="boton-desencriptar boton" id="desencriptar" onclick="desencriptar()">Desencriptar</button>                    
+                </div>
+            </div>
+            
+        </section>
+    </main>
+</div>
+
+    <section id="resultado-contenedor" class="resultado centrado">
+        <img id="imagen-resultado" class="imagen-muñeco" src="imagenes/Muñeco.svg" alt="">
+        <div id="contenedor-resultado" class="contenedor-no-encontrado">
+            <p class="titulo-no-encontrado font-inter">Ningún mensaje fue <br />  encontrado</p>
+            <p class="descripcion-no-encontrado font-inter">Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+        <div id="contenedor-copiar" style="padding: 20px;" class="hide">
+
+            <p class="font-inter" style="word-break: break-all;;" id="resultado"></p>
+            <button onclick="copiarTexto()" class="font-inter boton boton-desencriptar boton-copiar" id="copiar-boton">Copiar</button>
+        </div>
+        <!-- <div>
+            <button onclick="Copiar()">Copiar</button>
+        </div> -->
+
+    </section>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
